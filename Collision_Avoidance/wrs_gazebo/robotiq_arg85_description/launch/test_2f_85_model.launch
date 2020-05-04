@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+
+<launch>
+  <include file="$(find gazebo_ros)/launch/empty_world.launch"> 
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="recording" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+  
+   
+  <param name="robot_description" command="$(find xacro)/xacro.py $(find robotiq_arg85_description)/urdf/examples_of_macros/example_use_robotiq_arg85.xacro"/>
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model robotiq_arg85" />
+</launch>

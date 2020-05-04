@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<robot name="robotiq_arg85_description" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<xacro:macro name="robotiq_arg85_gazebo" params="side">
+
+ <gazebo reference="${side}_robotiq_85_base_link">
+ <material>Gazebo/Black</material>
+ <mu1 value="0.2"/>
+ <mu2 value="0.2"/> 
+ <selfCollide>false</selfCollide>
+ </gazebo>
+
+ <gazebo reference="${side}_left_inner_knuckle">
+ <material>Gazebo/Gray</material>
+ <mu1 value="0.2"/>
+ <mu2 value="0.2"/> 
+ <selfCollide>false</selfCollide>
+ 
+ </gazebo>
+ 
+ <gazebo reference="${side}_left_inner_finger">
+ <material>Gazebo/white</material>
+ <mu1 value="0.2"/>
+ <mu2 value="0.2"/> 
+ <selfCollide>false</selfCollide>
+ 
+ </gazebo>
+
+ <gazebo reference="${side}_right_inner_knuckle">
+ <material>Gazebo/Gray</material>
+ <mu1 value="0.2"/>
+ <mu2 value="0.2"/> 
+ <selfCollide>false</selfCollide>
+ 
+ </gazebo>
+
+ <gazebo reference="${side}_right_inner_finger">
+ <material>Gazebo/white</material>
+ <mu1 value="0.2"/>
+ <mu2 value="0.2"/> 
+ <selfCollide>false</selfCollide>
+ 
+ </gazebo>
+
+ <gazebo reference="${side}_right_outer_knuckle">
+ <material>Gazebo/Gray</material>
+ <mu1 value="0.2"/>
+ <mu2 value="0.2"/> 
+ <selfCollide>false</selfCollide>
+
+ </gazebo>
+
+ <gazebo reference="${side}_left_outer_knuckle">
+ <material>Gazebo/Gray</material>
+ <mu1 value="0.2"/>
+ <mu2 value="0.2"/> 
+ <selfCollide>false</selfCollide>
+ 
+ </gazebo>
+
+ </xacro:macro>
+</robot>

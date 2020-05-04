@@ -1,0 +1,18 @@
+<?xml version="1.0"?> 
+<launch>
+  <include file="$(find gazebo_ros)/launch/empty_world.launch"> 
+    <arg name="paused" value="true"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="recording" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find robotiq_arg85_description)/urdf/test_robotiq_arg85_description.urdf.xacro'"/>
+  <node
+    name="spawn_model"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-urdf -model robotiq_arg85_description -param robot_description"
+    output="screen" />
+  <include file="$(find robotiq_arg85_description)/launch/gripper_control.launch"/>
+</launch>

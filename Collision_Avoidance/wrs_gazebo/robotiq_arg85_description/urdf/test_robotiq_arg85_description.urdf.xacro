@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+This file shows how to import, instanciate and connect the sensor model to a given link
+-->
+<robot name="robotiq_arg85_description" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!--Import macro for left arm gripper-->
+  <xacro:include filename="$(find robotiq_arg85_description)/urdf/robotiq_arg85_description.gazebo"/>
+  <xacro:include filename="$(find robotiq_arg85_description)/urdf/robotiq_arg85_description.urdf.xacro" />
+  
+  <!--Base frame for reference-->
+  <link name="world" />
+
+  <xacro:robotiq_arg85_description parent="world" side="r">
+		<origin xyz="0 0 0.003" rpy="0 0 0"/> 
+	</xacro:robotiq_arg85_description>
+
+
+</robot>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:macro name="robotiq_ft300_transmission" params="side">
+
+  <transmission name="${side}_ft300_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="${side}_sensor_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="${side}_ft300_motor1">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+</xacro:macro>
+</robot>
+
